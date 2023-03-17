@@ -29,7 +29,11 @@ class GuadalooperList:
             groups.append(group)
 
             if group in previous_groups:
-                groups.pop() #removes it from the list of groups
+                groups.pop() #removes it from the list of groups, need to add it to the list again and shuffle
+                for i in range(len(group)):
+                    guadalooper = group.pop()
+                    guadalist_copy.append(guadalooper)
+                random.shuffle(guadalist_copy)
             else:
                 previous_groups.append(group) #else adds it to the list of previously formed groups 
 
